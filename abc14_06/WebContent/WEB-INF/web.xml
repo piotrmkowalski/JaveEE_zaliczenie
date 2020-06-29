@@ -1,0 +1,46 @@
+<web-app version="4.0" 
+		 xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+		                     http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+<login-config>     
+	<auth-method>BASIC</auth-method>     
+</login-config>
+<security-role>
+	<role-name>admin</role-name> 
+</security-role>
+<security-role>
+	<role-name>user</role-name> 
+</security-role>
+
+<security-constraint>    
+	<web-resource-collection>      
+		<web-resource-name>Ciasteczko</web-resource-name>       
+		<url-pattern>/Ciasteczko</url-pattern>       
+		<http-method>GET</http-method> 
+	</web-resource-collection>
+	<auth-constraint>       
+		<role-name>admin</role-name>     
+	</auth-constraint>
+	<user-data-constraint>
+       <transport-guarantee>NONE</transport-guarantee>     
+	</user-data-constraint>
+</security-constraint>
+
+<security-constraint>    
+	<web-resource-collection>      
+		<web-resource-name>Logowanie</web-resource-name>       
+		<url-pattern>/Logowanie</url-pattern>       
+		<http-method>GET</http-method> 
+	</web-resource-collection>
+	<auth-constraint>       
+		<role-name>admin</role-name>     
+	</auth-constraint>
+	<user-data-constraint>
+       <transport-guarantee>NONE</transport-guarantee>     
+	</user-data-constraint>
+</security-constraint>
+
+
+
+</web-app>
